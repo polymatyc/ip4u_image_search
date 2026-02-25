@@ -22,8 +22,8 @@ model = load_model()
 # -----------------------------
 @st.cache_data
 def load_data():
-    embeddings = np.load("D:/ai_warehouse/database/embeddings.npy")
-    df = pd.read_csv("D:/ai_warehouse/database/metadata.csv")
+    embeddings = np.load("database/embeddings.npy")
+    df = pd.read_csv("database/metadata.csv")
     return embeddings, df
 
 embeddings, df = load_data()
@@ -96,4 +96,5 @@ else:
                 st.write("**Specifications:**", product["specs"])
 
             st.write("**Similarity Score:**", round(similarities[idx], 4))
+
             st.markdown("---")
